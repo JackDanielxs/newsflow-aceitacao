@@ -1,0 +1,14 @@
+{
+  "name": "newsflow-aceitacao",
+  "version": "1.0.0",
+  "description": "Testes de aceitação com Playwright para o agendamento do NewsFlow",
+  "scripts": {
+    "postinstall": "playwright install chromium",
+    "test": "playwright test",
+    "relatorio": "playwright show-report",
+    "anti-teste": "node scripts/anti-teste.js"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
+}

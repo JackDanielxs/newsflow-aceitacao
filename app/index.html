@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NewsFlow · Agendamento</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <header>
+    <h1>NewsFlow</h1>
+    <p>Agendamento de envios · <span id="agora"></span></p>
+  </header>
+
+  <main>
+    <section aria-labelledby="titulo-edicoes">
+      <h2 id="titulo-edicoes">Edições</h2>
+      <ul id="edicoes" aria-label="Edições"></ul>
+    </section>
+
+    <section aria-labelledby="titulo-agendar">
+      <h2 id="titulo-agendar">Agendar envio</h2>
+      <form id="form-agendar" novalidate>
+        <label for="edicao">Edição</label>
+        <select id="edicao"></select>
+
+        <label for="horario">Data e hora do envio</label>
+        <input id="horario" type="datetime-local">
+
+        <button type="submit">Agendar envio</button>
+      </form>
+      <p class="regra">O envio precisa de ao menos 15 minutos de antecedência, no horário de São Paulo.</p>
+    </section>
+
+    <p id="status" role="status"></p>
+    <p id="erro" role="alert"></p>
+
+    <section aria-labelledby="titulo-agendados">
+      <h2 id="titulo-agendados">Envios agendados</h2>
+      <p id="resumo"></p>
+      <ul id="agendados" aria-label="Envios agendados"></ul>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

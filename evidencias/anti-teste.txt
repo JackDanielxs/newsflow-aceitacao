@@ -1,0 +1,6 @@
+VERMELHO  O agendamento entra na lista  →  "agenda o envio de uma edição aprovada"
+VERMELHO  Antecedência mínima de 15 minutos  →  "recusa o agendamento com menos de 15 minutos"
+VERMELHO  O estado sobrevive ao recarregar  →  "mantém o limite de 2 reagendamentos"
+VERMELHO  Limite de 2 reagendamentos  →  "mantém o limite de 2 reagendamentos"
+
+As 4 quebras deixaram o teste correspondente vermelho. App restaurado.

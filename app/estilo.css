@@ -1,0 +1,93 @@
+:root {
+  --fundo: #f6f7f9;
+  --cartao: #ffffff;
+  --texto: #1d2330;
+  --suave: #5b6475;
+  --borda: #d9dde5;
+  --destaque: #2457c5;
+  --ok: #1f7a4d;
+  --erro: #b42318;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: #14171d;
+    --cartao: #1d2129;
+    --texto: #e7eaf0;
+    --suave: #a3abba;
+    --borda: #343a46;
+    --destaque: #7aa2ff;
+    --ok: #5fd39a;
+    --erro: #ff8a7a;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--texto);
+  font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+header, main { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+header { padding-top: 32px; }
+h1 { margin: 0; font-size: 1.6rem; }
+header p { margin: 4px 0 0; color: var(--suave); }
+h2 { font-size: 1.1rem; margin: 0 0 12px; }
+
+section {
+  background: var(--cartao);
+  border: 1px solid var(--borda);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+ul { list-style: none; margin: 0; padding: 0; }
+#edicoes li { padding: 6px 0; }
+.situacao { color: var(--suave); }
+
+form { display: grid; grid-template-columns: 1fr; gap: 6px; }
+label { font-weight: 600; font-size: 0.9rem; }
+select, input, button {
+  font: inherit;
+  padding: 8px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: var(--cartao);
+  color: var(--texto);
+}
+button {
+  background: var(--destaque);
+  border-color: var(--destaque);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  justify-self: start;
+}
+.regra { color: var(--suave); font-size: 0.85rem; margin: 12px 0 0; }
+
+#status, #erro { margin: 16px 0 0; font-weight: 600; min-height: 1.5em; }
+#status:empty, #erro:empty { margin: 0; min-height: 0; }
+#status { color: var(--ok); }
+#erro { color: var(--erro); }
+
+#resumo { color: var(--suave); margin: 0 0 8px; }
+#agendados li {
+  border-top: 1px solid var(--borda);
+  padding: 12px 0;
+  display: grid;
+  gap: 4px;
+}
+#agendados .detalhes { color: var(--suave); }
+#agendados form { grid-template-columns: auto 1fr auto; align-items: center; gap: 8px; margin-top: 4px; }
+#agendados form label { display: contents; }
+#agendados form button { margin-top: 0; }
+
+@media (max-width: 520px) {
+  #agendados form { grid-template-columns: 1fr; }
+}
